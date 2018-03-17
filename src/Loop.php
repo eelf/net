@@ -22,8 +22,8 @@ class Loop {
      * @throws \Exception
      */
     public function run() {
-        if (!$this->connections) return;
         while (true) {
+            if (!$this->connections) return;
             $reads = $writes = $excepts = [];
             foreach ($this->connections as $stream_id => $connection) {
                 $stream = $connection->getStream();
